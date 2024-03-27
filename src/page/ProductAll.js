@@ -1,6 +1,9 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import ProductCard from '../component/ProductCard';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const ProductAll = () => {
     const [productList, setProductList] = useState([]);
@@ -15,9 +18,15 @@ const ProductAll = () => {
     }, []);
 
   return (
-    <div>
-        <ProductCard />
-    </div>
+        <Container fluid="sm">
+            <Row>
+                {productList.map(menu => (
+                    <Col lg={3}>
+                        <ProductCard item={menu}/>
+                    </Col>    
+                ))}
+            </Row>
+        </Container>
   )
 }
 
