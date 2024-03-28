@@ -11,6 +11,9 @@ const Navbar = () => {
   const goToLogin = () => {
     navigate('/login');
   }
+  const goToHome = () => {
+    navigate('/')
+  }
 
   return (
     <div>
@@ -20,7 +23,7 @@ const Navbar = () => {
                 <div>로그인</div>
             </div>
         </div>
-        <div className='logo'>
+        <div className='logo' onClick={goToHome}>
             <img width={150} src="https://upload.wikimedia.org/wikipedia/commons/5/53/H%26M-Logo.svg"/>
         </div>
         <div className='menu-area'>
