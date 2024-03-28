@@ -14,6 +14,16 @@ const Navbar = () => {
   const goToHome = () => {
     navigate('/')
   }
+  const search = (event) => {
+    if (event.key === "Enter") {
+      let keyword = event.target.value;
+      navigate(`/?q=${keyword}`);
+    }
+  }
+  const resetValue = (event) => {
+    event.target.value = "";
+  }
+  
 
   return (
     <div>
@@ -32,7 +42,7 @@ const Navbar = () => {
               </ul>
         <div className='search-area'>
           <FontAwesomeIcon icon={faSearch} />
-          <input type='text'placeholder='검색'/>
+          <input type='text'placeholder='검색' onClick={resetValue} onKeyDown={(event) => search(event)}/>
         </div>
       </div>
     </div>
