@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFaceSmile } from '@fortawesome/free-regular-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-const Navbar = () => {
+const Navbar = ({authenticate, setAuthenticate}) => {
   const menuList = ['여성','Divided','남성','신생아/유아','아동','H&M Home','Sale','지속가능성'];
   const navigate = useNavigate();
 
@@ -23,14 +23,22 @@ const Navbar = () => {
   const resetValue = (event) => {
     event.target.value = "";
   }
-  
 
   return (
     <div>
         <div>
-            <div className="login-button" onClick={goToLogin} role="button" tabIndex="0">
-                <FontAwesomeIcon icon={faFaceSmile} className='login-icon'/>
-                <div>로그인</div>
+            <div className="login-button" role="button" tabIndex="0">
+                {authenticate ? (
+                <div onClick={() => setAuthenticate(false)}>
+                  <FontAwesomeIcon icon={faFaceSmile} className='login-icon'/>
+                  <span>로그아웃</span>
+                </div>
+                  ) : (
+                <div onClick={() => navigate("/login")}>
+                  <FontAwesomeIcon icon={faFaceSmile} className='login-icon'/>
+                  <span>로그인</span>
+                </div>
+                  )}
             </div>
         </div>
         <div className='logo' onClick={goToHome}>
