@@ -16,6 +16,7 @@ import PrivateRoute from './route/PrivateRoute';
 // 6. 로그아웃 버튼 클릭 시 로그아웃.
 function App() {
   const [authenticate, setAuthenticate] = useState(false);
+
   useEffect(() => {
     console.log("aaa", authenticate);
   }, [authenticate])
