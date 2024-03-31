@@ -8,21 +8,6 @@ const Navbar = ({authenticate, setAuthenticate}) => {
   const menuList = ['여성','Divided','남성','신생아/유아','아동','H&M Home','Sale','지속가능성'];
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
-  const menuRef = useRef(null);
-
-  // 메뉴 외부 클릭 시 메뉴 닫기
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
 
   // const goToLogin = () => {
   //   navigate('/login');
@@ -61,11 +46,11 @@ const Navbar = ({authenticate, setAuthenticate}) => {
             <img width={150} src="https://upload.wikimedia.org/wikipedia/commons/5/53/H%26M-Logo.svg"/>
         </div>
         <div className='menu-area'>
-              <ul className={`menu-list ${menuOpen ? "open" : ""}`} ref={menuRef}>
-                {menuList.map((menu, index) => (
-                  <li key={index}>{menu}</li>
-                ))}
-              </ul>
+             <ul className={`menu-list ${menuOpen ? "open" : ""}`}>
+              {menuList.map((menu, index) => (
+                <li key={index}>{menu}</li>
+              ))}
+            </ul>
             <div className='hamburger' onClick={() => {setMenuOpen(!menuOpen);}}>
               <FontAwesomeIcon icon={faBars}/>
             </div>
