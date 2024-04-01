@@ -17,10 +17,10 @@ const ProductDetail = () => {
   },[])
 
   return (
-    <Container>
+    <Container id='productDetail-area'>
       <Row>
-        <Col>
-          <img src={product?.img} />
+        <Col >
+          <img id='productDetail-img' src={product?.img} />
         </Col>
         <Col>
           <div>{product?.new == true ? "신상품" : ""}</div>

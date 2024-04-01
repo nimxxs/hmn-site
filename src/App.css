@@ -247,6 +247,12 @@
   #card-img {
     width: 250px;
   }
+  #productDetail-area {
+    text-align: center;
+  }
+  #productDetail-img {
+    width: 150px;
+  }
 
 }
 
