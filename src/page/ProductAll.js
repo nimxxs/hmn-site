@@ -22,7 +22,7 @@ const ProductAll = () => {
     }, [query]);
 
   return (
-        <Container fluid="sm">
+        <Container id='mobile-area'>
             <Row>
                 {productList.map(menu => (
                     <Col lg={3}>

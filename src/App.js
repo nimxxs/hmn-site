@@ -1,6 +1,6 @@
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState, useEffect, Navigate } from 'react';
+import './App.css';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import ProductAll from './page/ProductAll';
 import Login from './page/Login';

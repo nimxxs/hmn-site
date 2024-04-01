@@ -241,11 +241,12 @@
     right: 175px;
     border: none;
   }
-  .container-sm {
-    width: 300px;
+  #mobile-area {
+    margin-top: 50px;
   }
-  .menu-area div.hide:first-child {
-    display: none;
+  #card-img {
+    width: 250px;
   }
+
 }
 
