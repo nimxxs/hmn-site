@@ -213,6 +213,8 @@
   .menu-area {
     width: 100vw;
     background-color: rgb(255, 255, 255);
+    position: static;
+    z-index: 1;
   }
   .menu-area ul {
     display: none;
@@ -255,6 +257,10 @@
   }
   #plusButton {
     width: 200px;
+  }
+  .productDetail {
+    position: static;
+    z-index: 0;
   }
 
 }
