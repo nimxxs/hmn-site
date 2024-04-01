@@ -253,6 +253,9 @@
   #productDetail-img {
     width: 150px;
   }
+  #plusButton {
+    width: 200px;
+  }
 
 }
 

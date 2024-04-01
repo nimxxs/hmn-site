@@ -37,7 +37,7 @@ const ProductDetail = () => {
               <Dropdown.Item href="#/action-3">{product?.size[2]}</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-          <Button className='plusButton' variant="dark">추가</Button>
+          <Button id='plusButton' className='plusButton' variant="dark">추가</Button>
         </Col>
       </Row>
     </Container>
