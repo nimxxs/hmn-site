@@ -2,7 +2,7 @@ import { React, useState, useEffect, useRef } from 'react'
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFaceSmile } from '@fortawesome/free-regular-svg-icons'
-import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = ({authenticate, setAuthenticate}) => {
   const menuList = ['여성','Divided','남성','신생아/유아','아동','H&M Home','Sale','지속가능성'];
@@ -52,7 +52,7 @@ const Navbar = ({authenticate, setAuthenticate}) => {
               ))}
             </ul>
             <div className='hamburger' onClick={() => {setMenuOpen(!menuOpen);}}>
-              <FontAwesomeIcon icon={faBars}/>
+              <FontAwesomeIcon icon={menuOpen ? faTimes : faBars}/>
             </div>
         <div className='search-area'>
           <FontAwesomeIcon icon={faSearch} />
