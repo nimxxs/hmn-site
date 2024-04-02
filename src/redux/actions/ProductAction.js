@@ -8,6 +8,7 @@
 // getState? 현재의 state를 받을 수 있음.
 
 import ProductAll from "../../page/ProductAll";
+import productActions from "../reducers/ProductReducer"
 
 function getProducts(searchQuery) {
     return async (dispatch, getState) => {
@@ -18,7 +19,8 @@ function getProducts(searchQuery) {
         // action을 했으니 이제 data를 reducer로 보내줄 차례.
         // 보내는 방법은 dispatch 사용
         // payload: data -> data를 보내준다!
-        dispatch({type: "GET_PRODUCT_SUCCESS", payload: {data}})
+        // dispatch({type: "GET_PRODUCT_SUCCESS", payload: {data}})
+        dispatch(productActions.getAllProducts({data}))
     }
 }
 
@@ -28,7 +30,8 @@ function getProductDetail(id) {
         let response = await fetch(url);
         let data = await response.json();
 
-        dispatch({type: "DETAIL", payload: {data}})
+        // dispatch({type: "DETAIL", payload: {data}})
+        dispatch(productActions.getDetailProducts({data}))
     }
     
 }
