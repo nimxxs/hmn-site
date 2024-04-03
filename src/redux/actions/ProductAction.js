@@ -7,8 +7,8 @@
 // 매개변수는 dispatch, getState
 // getState? 현재의 state를 받을 수 있음.
 
-import ProductAll from "../../page/ProductAll";
-import {productActions} from "../reducers/ProductSlice"
+// import ProductAll from "../../page/ProductAll";
+// import {productActions} from "../reducers/ProductSlice"
 
 // function getProducts(searchQuery) {
 //     return async (dispatch, getState) => {
@@ -24,18 +24,18 @@ import {productActions} from "../reducers/ProductSlice"
 //     }
 // }
 
-function getProductDetail(id) {
-    return async (dispatch) => {
-        let url = `https://my-json-server.typicode.com/nimxxs/hnm-site/products/${id}`;
-        let response = await fetch(url);
-        let data = await response.json();
+// function getProductDetail(id) {
+//     return async (dispatch) => {
+//         let url = `https://my-json-server.typicode.com/nimxxs/hnm-site/products/${id}`;
+//         let response = await fetch(url);
+//         let data = await response.json();
 
-        // dispatch({type: "DETAIL", payload: {data}})
-        dispatch(productActions.getDetailProducts({data}))
-    }
+//         // dispatch({type: "DETAIL", payload: {data}})
+//         dispatch(productActions.getDetailProducts({data}))
+//     }
     
-}
+// }
 
 // productAction이라는 객체를 반환할건데, 함수는 getProducts.
 // 함수가 여러가지가 될 수 있으니, 여러 개의 함수를 하나의 객체에 담아서 return.
-export const ProductAction = {getProductDetail}
+// export const ProductAction = {getProductDetail}
