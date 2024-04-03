@@ -8,21 +8,21 @@
 // getState? 현재의 state를 받을 수 있음.
 
 import ProductAll from "../../page/ProductAll";
-import productActions from "../reducers/ProductReducer"
+import {productActions} from "../reducers/ProductSlice"
 
-function getProducts(searchQuery) {
-    return async (dispatch, getState) => {
-        let url = `https://my-json-server.typicode.com/nimxxs/hnm-site/products?q=${searchQuery}`;
-        let response = await fetch(url);
-        let data = await response.json();
+// function getProducts(searchQuery) {
+//     return async (dispatch, getState) => {
+//         let url = `https://my-json-server.typicode.com/nimxxs/hnm-site/products?q=${searchQuery}`;
+//         let response = await fetch(url);
+//         let data = await response.json();
 
-        // action을 했으니 이제 data를 reducer로 보내줄 차례.
-        // 보내는 방법은 dispatch 사용
-        // payload: data -> data를 보내준다!
-        // dispatch({type: "GET_PRODUCT_SUCCESS", payload: {data}})
-        dispatch(productActions.getAllProducts({data}))
-    }
-}
+//         // action을 했으니 이제 data를 reducer로 보내줄 차례.
+//         // 보내는 방법은 dispatch 사용
+//         // payload: data -> data를 보내준다!
+//         // dispatch({type: "GET_PRODUCT_SUCCESS", payload: {data}})
+//         dispatch(productActions.getAllProducts({data}))
+//     }
+// }
 
 function getProductDetail(id) {
     return async (dispatch) => {
@@ -38,4 +38,4 @@ function getProductDetail(id) {
 
 // productAction이라는 객체를 반환할건데, 함수는 getProducts.
 // 함수가 여러가지가 될 수 있으니, 여러 개의 함수를 하나의 객체에 담아서 return.
-export const ProductAction = {getProducts, getProductDetail}
+export const ProductAction = {getProductDetail}
