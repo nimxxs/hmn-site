@@ -26,4 +26,4 @@ React를 이용하여 H&M 사이트 구현하기.
 3. 모바일로도 볼 수 있다.
 
 ## 🌍Netlify
-`https://hnm-shop-site.netlify.app`
+https://hnm-shop-site.netlify.app
